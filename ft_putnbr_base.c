@@ -6,7 +6,7 @@
 /*   By: aachhoub <aachhoub@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 14:26:22 by aachhoub          #+#    #+#             */
-/*   Updated: 2022/09/03 14:54:17 by aachhoub         ###   ########.fr       */
+/*   Updated: 2022/09/03 19:49:37 by aachhoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr_base(int nb, char cs, int *index)
 {
 	unsigned int	n;
-	char	*hex_base;
+	char			*hex_base;
 
 	n = nb;
 	if (cs == 'x')
@@ -25,7 +25,7 @@ void	ft_putnbr_base(int nb, char cs, int *index)
 	if (nb > 15)
 	{
 		ft_putnbr_base(n / 16, cs, index);
-		ft_putnbr_base(n / 16, cs, index);
+		ft_putnbr_base(n % 16, cs, index);
 	}
 	else if (nb < 0)
 	{
@@ -34,6 +34,6 @@ void	ft_putnbr_base(int nb, char cs, int *index)
 	}
 	else
 	{
-		ft_putchar(hex_base[n], index);
+		ft_putchar(hex_base[n % 16], index);
 	}
 }
