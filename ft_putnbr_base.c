@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aachhoub <aachhoub@42.fr>                  +#+  +:+       +#+        */
+/*   By: aachhoub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 14:26:22 by aachhoub          #+#    #+#             */
-/*   Updated: 2022/09/03 19:49:37 by aachhoub         ###   ########.fr       */
+/*   Created: 2022/10/21 09:26:47 by aachhoub          #+#    #+#             */
+/*   Updated: 2022/10/21 09:26:48 by aachhoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(int nb, char cs, int *index)
+void	ft_putnbr_base(unsigned int nb, char cs, int *index)
 {
 	unsigned int	n;
 	char			*hex_base;
@@ -22,18 +22,11 @@ void	ft_putnbr_base(int nb, char cs, int *index)
 		hex_base = "0123456789abcdef";
 	else
 		hex_base = "0123456789ABCDEF";
-	if (nb > 15)
+	if (nb < 16)
+		ft_putchar(hex_base[n % 16], index);
+	else
 	{
 		ft_putnbr_base(n / 16, cs, index);
 		ft_putnbr_base(n % 16, cs, index);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar('-', index);
-		ft_putnbr_base(-n, cs, index);
-	}
-	else
-	{
-		ft_putchar(hex_base[n % 16], index);
 	}
 }

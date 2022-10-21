@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aachhoub <aachhoub@42.fr>                  +#+  +:+       +#+        */
+/*   By: aachhoub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/03 15:15:55 by aachhoub          #+#    #+#             */
-/*   Updated: 2022/09/03 20:04:45 by aachhoub         ###   ########.fr       */
+/*   Created: 2022/10/21 09:26:25 by aachhoub          #+#    #+#             */
+/*   Updated: 2022/10/21 09:26:26 by aachhoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_printf(const char *format, ...)
 	va_list	args;
 	int		len;
 
+	len = 0;
 	va_start(args, format);
 	while (*format)
 	{
