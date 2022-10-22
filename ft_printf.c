@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aachhoub <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 09:26:25 by aachhoub          #+#    #+#             */
-/*   Updated: 2022/10/21 09:26:26 by aachhoub         ###   ########.fr       */
+/*   Created: 2022/10/22 12:34:30 by aachhoub          #+#    #+#             */
+/*   Updated: 2022/10/22 12:34:33 by aachhoub         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	ft_check_specifier(va_list args, const char spec, int *index)
 		ft_print_memory(va_arg(args, void *), index);
 	else if (spec == '%')
 		ft_putchar('%', index);
+	else
+		ft_putchar(spec, index);
 }
 
 int	ft_printf(const char *format, ...)
